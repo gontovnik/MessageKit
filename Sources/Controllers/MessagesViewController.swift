@@ -221,7 +221,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     /// Performs a delete or insert on the `MessagesCollectionView` on the provided section
     ///
     /// - Parameter section: The index to modify
-    private func performUpdatesForTypingIndicatorVisability(at section: Int) {
+    open func performUpdatesForTypingIndicatorVisability(at section: Int) {
         if isTypingIndicatorHidden {
             messagesCollectionView.deleteSections([section - 1])
         } else {
@@ -235,7 +235,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     ///
     /// - Parameter section
     /// - Returns: A Boolean indicating if the TypingIndicator should be presented at the given section
-    public func isSectionReservedForTypingIndicator(_ section: Int) -> Bool {
+    open func isSectionReservedForTypingIndicator(_ section: Int) -> Bool {
         return !messagesCollectionView.isTypingIndicatorHidden && section == self.numberOfSections(in: messagesCollectionView) - 1
     }
 
